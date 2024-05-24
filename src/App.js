@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  APIProvider,
+  Map,
+  AdvancedMarker,
+  Pin,
+  InfoWindow,
+} from "@vis.gl/react-google-maps";
 
 function App() {
+  const position = { lat: 53.54, lng: 10 };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <APIProvider apiKey="AIzaSyBP99Vf_gDpO4gDtVz96aVukYBn6fTChSw">
+      <div style={{ height: "100vh", width: "100%" }}>
+        <Map zoom={9} center={position} mapId="a0f9dccaba48dc35"></Map>
+      </div>
+    </APIProvider>
   );
 }
 
